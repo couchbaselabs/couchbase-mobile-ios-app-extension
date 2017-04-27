@@ -1,0 +1,6 @@
+framework module Pods_CBLiteAppExtension_CBLiteTaskExtension {
+  umbrella header "Pods-CBLiteAppExtension-CBLiteTaskExtension-umbrella.h"
+
+  export *
+  module * { export * }
+}

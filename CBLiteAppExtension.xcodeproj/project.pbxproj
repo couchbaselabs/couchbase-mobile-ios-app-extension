@@ -7,12 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F7559B01EB2679E00F8C661 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9980651EB2457600805B1D /* DatabaseManager.swift */; };
 		5F8C35791EA7A2D20085000E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C35781EA7A2D20085000E /* AppDelegate.swift */; };
-		5F8C357B1EA7A2D20085000E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C357A1EA7A2D20085000E /* ViewController.swift */; };
+		5F8C357B1EA7A2D20085000E /* TaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C357A1EA7A2D20085000E /* TaskListTableViewController.swift */; };
 		5F8C357E1EA7A2D20085000E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F8C357C1EA7A2D20085000E /* Main.storyboard */; };
 		5F8C35801EA7A2D20085000E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F8C357F1EA7A2D20085000E /* Assets.xcassets */; };
 		5F8C35831EA7A2D20085000E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F8C35811EA7A2D20085000E /* LaunchScreen.storyboard */; };
 		5F8C358E1EA7A2D20085000E /* CBLiteAppExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C358D1EA7A2D20085000E /* CBLiteAppExtensionTests.swift */; };
+		5F8C35B31EA7AB2D0085000E /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8C35B21EA7AB2D0085000E /* NotificationCenter.framework */; };
+		5F8C35B61EA7AB2D0085000E /* TopTaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C35B51EA7AB2D0085000E /* TopTaskTableViewController.swift */; };
+		5F8C35B91EA7AB2D0085000E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F8C35B71EA7AB2D0085000E /* MainInterface.storyboard */; };
+		5F8C35BD1EA7AB2D0085000E /* CBLiteTaskExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5F8C35B01EA7AB2D0085000E /* CBLiteTaskExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5F8C35C61EA7B0B70085000E /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C35C51EA7B0B70085000E /* ViewControllerExtension.swift */; };
+		5F99805A1EAB9B3200805B1D /* PresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9980591EAB9B3200805B1D /* PresenterProtocols.swift */; };
+		5F99805B1EAB9B3200805B1D /* PresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9980591EAB9B3200805B1D /* PresenterProtocols.swift */; };
+		5F99805E1EAB9BA900805B1D /* TaskPresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F99805D1EAB9BA900805B1D /* TaskPresenterProtocols.swift */; };
+		5F99805F1EAB9BA900805B1D /* TaskPresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F99805D1EAB9BA900805B1D /* TaskPresenterProtocols.swift */; };
+		5F9980611EAB9CAF00805B1D /* TaskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9980601EAB9CAF00805B1D /* TaskPresenter.swift */; };
+		5F9980621EAB9CAF00805B1D /* TaskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9980601EAB9CAF00805B1D /* TaskPresenter.swift */; };
+		5F9980661EB2457600805B1D /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9980651EB2457600805B1D /* DatabaseManager.swift */; };
+		89BBCB35F2A45A460051ACF7 /* Pods_CBLiteAppExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDA7A45A7DBBCAB64FAFA38 /* Pods_CBLiteAppExtension.framework */; };
+		E301034E61AAB6581EB89243 /* Pods_CBLiteAppExtension_CBLiteTaskExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CE419A34D79E23AC7988A88 /* Pods_CBLiteAppExtension_CBLiteTaskExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +38,35 @@
 			remoteGlobalIDString = 5F8C35741EA7A2D20085000E;
 			remoteInfo = CBLiteAppExtension;
 		};
+		5F8C35BB1EA7AB2D0085000E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F8C356D1EA7A2D20085000E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F8C35AF1EA7AB2D0085000E;
+			remoteInfo = CBLiteTaskExtension;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5F8C35AA1EA7A93F0085000E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5F8C35BD1EA7AB2D0085000E /* CBLiteTaskExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0CE419A34D79E23AC7988A88 /* Pods_CBLiteAppExtension_CBLiteTaskExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CBLiteAppExtension_CBLiteTaskExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		307685921E36839CFA401882 /* Pods-CBLiteAppExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBLiteAppExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CBLiteAppExtension/Pods-CBLiteAppExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		5F8C35751EA7A2D20085000E /* CBLiteAppExtension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CBLiteAppExtension.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F8C35781EA7A2D20085000E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5F8C357A1EA7A2D20085000E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5F8C357A1EA7A2D20085000E /* TaskListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewController.swift; sourceTree = "<group>"; };
 		5F8C357D1EA7A2D20085000E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F8C357F1EA7A2D20085000E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F8C35821EA7A2D20085000E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +74,23 @@
 		5F8C35891EA7A2D20085000E /* CBLiteAppExtensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CBLiteAppExtensionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F8C358D1EA7A2D20085000E /* CBLiteAppExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBLiteAppExtensionTests.swift; sourceTree = "<group>"; };
 		5F8C358F1EA7A2D20085000E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F8C35AB1EA7A9670085000E /* CBLiteAppExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CBLiteAppExtension.entitlements; sourceTree = "<group>"; };
+		5F8C35B01EA7AB2D0085000E /* CBLiteTaskExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CBLiteTaskExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F8C35B21EA7AB2D0085000E /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		5F8C35B51EA7AB2D0085000E /* TopTaskTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTaskTableViewController.swift; sourceTree = "<group>"; };
+		5F8C35B81EA7AB2D0085000E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		5F8C35BA1EA7AB2D0085000E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F8C35C11EA7AC6F0085000E /* CBLiteAppExtension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CBLiteAppExtension-Bridging-Header.h"; sourceTree = "<group>"; };
+		5F8C35C41EA7B0840085000E /* CBLiteTaskExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CBLiteTaskExtension.entitlements; sourceTree = "<group>"; };
+		5F8C35C51EA7B0B70085000E /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		5F9980591EAB9B3200805B1D /* PresenterProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterProtocols.swift; sourceTree = "<group>"; };
+		5F99805D1EAB9BA900805B1D /* TaskPresenterProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskPresenterProtocols.swift; sourceTree = "<group>"; };
+		5F9980601EAB9CAF00805B1D /* TaskPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskPresenter.swift; sourceTree = "<group>"; };
+		5F9980651EB2457600805B1D /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		8686F639867F5285E280BC8F /* Pods-CBLiteAppExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBLiteAppExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-CBLiteAppExtension/Pods-CBLiteAppExtension.release.xcconfig"; sourceTree = "<group>"; };
+		9EDA7A45A7DBBCAB64FAFA38 /* Pods_CBLiteAppExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CBLiteAppExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACAFCAFF0904E3AFE53BC92A /* Pods-CBLiteAppExtension-CBLiteTaskExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBLiteAppExtension-CBLiteTaskExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CBLiteAppExtension-CBLiteTaskExtension/Pods-CBLiteAppExtension-CBLiteTaskExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		D878BC3EE8C5A0DCB9736B17 /* Pods-CBLiteAppExtension-CBLiteTaskExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBLiteAppExtension-CBLiteTaskExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-CBLiteAppExtension-CBLiteTaskExtension/Pods-CBLiteAppExtension-CBLiteTaskExtension.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89BBCB35F2A45A460051ACF7 /* Pods_CBLiteAppExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,15 +109,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5F8C35AD1EA7AB2D0085000E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F8C35B31EA7AB2D0085000E /* NotificationCenter.framework in Frameworks */,
+				E301034E61AAB6581EB89243 /* Pods_CBLiteAppExtension_CBLiteTaskExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25BC49B70F33B755BD526A2C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				307685921E36839CFA401882 /* Pods-CBLiteAppExtension.debug.xcconfig */,
+				8686F639867F5285E280BC8F /* Pods-CBLiteAppExtension.release.xcconfig */,
+				ACAFCAFF0904E3AFE53BC92A /* Pods-CBLiteAppExtension-CBLiteTaskExtension.debug.xcconfig */,
+				D878BC3EE8C5A0DCB9736B17 /* Pods-CBLiteAppExtension-CBLiteTaskExtension.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5F8C356C1EA7A2D20085000E = {
 			isa = PBXGroup;
 			children = (
 				5F8C35771EA7A2D20085000E /* CBLiteAppExtension */,
 				5F8C358C1EA7A2D20085000E /* CBLiteAppExtensionTests */,
+				5F8C35B41EA7AB2D0085000E /* CBLiteTaskExtension */,
+				5F8C35B11EA7AB2D0085000E /* Frameworks */,
 				5F8C35761EA7A2D20085000E /* Products */,
+				25BC49B70F33B755BD526A2C /* Pods */,
+				5F8C35C11EA7AC6F0085000E /* CBLiteAppExtension-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +150,7 @@
 			children = (
 				5F8C35751EA7A2D20085000E /* CBLiteAppExtension.app */,
 				5F8C35891EA7A2D20085000E /* CBLiteAppExtensionTests.xctest */,
+				5F8C35B01EA7AB2D0085000E /* CBLiteTaskExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,12 +158,10 @@
 		5F8C35771EA7A2D20085000E /* CBLiteAppExtension */ = {
 			isa = PBXGroup;
 			children = (
-				5F8C35781EA7A2D20085000E /* AppDelegate.swift */,
-				5F8C357A1EA7A2D20085000E /* ViewController.swift */,
-				5F8C357C1EA7A2D20085000E /* Main.storyboard */,
-				5F8C357F1EA7A2D20085000E /* Assets.xcassets */,
-				5F8C35811EA7A2D20085000E /* LaunchScreen.storyboard */,
-				5F8C35841EA7A2D20085000E /* Info.plist */,
+				5F8C35C81EA7B0D10085000E /* supporting */,
+				5F8C35C91EA7B0D90085000E /* view controllers */,
+				5F8C35C71EA7B0C10085000E /* extension */,
+				5F99805C1EAB9B5B00805B1D /* presenter */,
 			);
 			path = CBLiteAppExtension;
 			sourceTree = "<group>";
@@ -96,6 +175,67 @@
 			path = CBLiteAppExtensionTests;
 			sourceTree = "<group>";
 		};
+		5F8C35B11EA7AB2D0085000E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F8C35B21EA7AB2D0085000E /* NotificationCenter.framework */,
+				9EDA7A45A7DBBCAB64FAFA38 /* Pods_CBLiteAppExtension.framework */,
+				0CE419A34D79E23AC7988A88 /* Pods_CBLiteAppExtension_CBLiteTaskExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5F8C35B41EA7AB2D0085000E /* CBLiteTaskExtension */ = {
+			isa = PBXGroup;
+			children = (
+				5F8C35C41EA7B0840085000E /* CBLiteTaskExtension.entitlements */,
+				5F8C35B51EA7AB2D0085000E /* TopTaskTableViewController.swift */,
+				5F8C35B71EA7AB2D0085000E /* MainInterface.storyboard */,
+				5F8C35BA1EA7AB2D0085000E /* Info.plist */,
+			);
+			path = CBLiteTaskExtension;
+			sourceTree = "<group>";
+		};
+		5F8C35C71EA7B0C10085000E /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				5F8C35C51EA7B0B70085000E /* ViewControllerExtension.swift */,
+			);
+			name = extension;
+			sourceTree = "<group>";
+		};
+		5F8C35C81EA7B0D10085000E /* supporting */ = {
+			isa = PBXGroup;
+			children = (
+				5F8C35AB1EA7A9670085000E /* CBLiteAppExtension.entitlements */,
+				5F8C35781EA7A2D20085000E /* AppDelegate.swift */,
+				5F8C357C1EA7A2D20085000E /* Main.storyboard */,
+				5F8C357F1EA7A2D20085000E /* Assets.xcassets */,
+				5F8C35811EA7A2D20085000E /* LaunchScreen.storyboard */,
+				5F8C35841EA7A2D20085000E /* Info.plist */,
+			);
+			name = supporting;
+			sourceTree = "<group>";
+		};
+		5F8C35C91EA7B0D90085000E /* view controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F8C357A1EA7A2D20085000E /* TaskListTableViewController.swift */,
+			);
+			name = "view controllers";
+			sourceTree = "<group>";
+		};
+		5F99805C1EAB9B5B00805B1D /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				5F9980591EAB9B3200805B1D /* PresenterProtocols.swift */,
+				5F99805D1EAB9BA900805B1D /* TaskPresenterProtocols.swift */,
+				5F9980601EAB9CAF00805B1D /* TaskPresenter.swift */,
+				5F9980651EB2457600805B1D /* DatabaseManager.swift */,
+			);
+			name = presenter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,13 +243,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F8C35921EA7A2D20085000E /* Build configuration list for PBXNativeTarget "CBLiteAppExtension" */;
 			buildPhases = (
+				0A074126BAB0CC728B09FEBC /* [CP] Check Pods Manifest.lock */,
 				5F8C35711EA7A2D20085000E /* Sources */,
 				5F8C35721EA7A2D20085000E /* Frameworks */,
 				5F8C35731EA7A2D20085000E /* Resources */,
+				5F8C35AA1EA7A93F0085000E /* Embed App Extensions */,
+				9DD8FC7BFF65B7217DE499BD /* [CP] Embed Pods Frameworks */,
+				555AE7052F65A5FFAAED57BD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5F8C35BC1EA7AB2D0085000E /* PBXTargetDependency */,
 			);
 			name = CBLiteAppExtension;
 			productName = CBLiteAppExtension;
@@ -134,6 +279,25 @@
 			productReference = 5F8C35891EA7A2D20085000E /* CBLiteAppExtensionTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		5F8C35AF1EA7AB2D0085000E /* CBLiteTaskExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F8C35BE1EA7AB2D0085000E /* Build configuration list for PBXNativeTarget "CBLiteTaskExtension" */;
+			buildPhases = (
+				52DE6D1E50EADB7ACDA15FFC /* [CP] Check Pods Manifest.lock */,
+				5F8C35AC1EA7AB2D0085000E /* Sources */,
+				5F8C35AD1EA7AB2D0085000E /* Frameworks */,
+				5F8C35AE1EA7AB2D0085000E /* Resources */,
+				203C97DB02CA662A44744C0B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CBLiteTaskExtension;
+			productName = CBLiteTaskExtension;
+			productReference = 5F8C35B01EA7AB2D0085000E /* CBLiteTaskExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -146,12 +310,29 @@
 				TargetAttributes = {
 					5F8C35741EA7A2D20085000E = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = T97TEF42TA;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					5F8C35881EA7A2D20085000E = {
 						CreatedOnToolsVersion = 8.3;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 5F8C35741EA7A2D20085000E;
+					};
+					5F8C35AF1EA7AB2D0085000E = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = T97TEF42TA;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -170,6 +351,7 @@
 			targets = (
 				5F8C35741EA7A2D20085000E /* CBLiteAppExtension */,
 				5F8C35881EA7A2D20085000E /* CBLiteAppExtensionTests */,
+				5F8C35AF1EA7AB2D0085000E /* CBLiteTaskExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -192,15 +374,106 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5F8C35AE1EA7AB2D0085000E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F8C35B91EA7AB2D0085000E /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A074126BAB0CC728B09FEBC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		203C97DB02CA662A44744C0B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CBLiteAppExtension-CBLiteTaskExtension/Pods-CBLiteAppExtension-CBLiteTaskExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		52DE6D1E50EADB7ACDA15FFC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		555AE7052F65A5FFAAED57BD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CBLiteAppExtension/Pods-CBLiteAppExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9DD8FC7BFF65B7217DE499BD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CBLiteAppExtension/Pods-CBLiteAppExtension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5F8C35711EA7A2D20085000E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F8C357B1EA7A2D20085000E /* ViewController.swift in Sources */,
+				5F8C357B1EA7A2D20085000E /* TaskListTableViewController.swift in Sources */,
 				5F8C35791EA7A2D20085000E /* AppDelegate.swift in Sources */,
+				5F99805A1EAB9B3200805B1D /* PresenterProtocols.swift in Sources */,
+				5F99805E1EAB9BA900805B1D /* TaskPresenterProtocols.swift in Sources */,
+				5F8C35C61EA7B0B70085000E /* ViewControllerExtension.swift in Sources */,
+				5F9980611EAB9CAF00805B1D /* TaskPresenter.swift in Sources */,
+				5F9980661EB2457600805B1D /* DatabaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +485,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5F8C35AC1EA7AB2D0085000E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F8C35B61EA7AB2D0085000E /* TopTaskTableViewController.swift in Sources */,
+				5F99805B1EAB9B3200805B1D /* PresenterProtocols.swift in Sources */,
+				5F7559B01EB2679E00F8C661 /* DatabaseManager.swift in Sources */,
+				5F99805F1EAB9BA900805B1D /* TaskPresenterProtocols.swift in Sources */,
+				5F9980621EAB9CAF00805B1D /* TaskPresenter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -219,6 +504,11 @@
 			isa = PBXTargetDependency;
 			target = 5F8C35741EA7A2D20085000E /* CBLiteAppExtension */;
 			targetProxy = 5F8C358A1EA7A2D20085000E /* PBXContainerItemProxy */;
+		};
+		5F8C35BC1EA7AB2D0085000E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5F8C35AF1EA7AB2D0085000E /* CBLiteTaskExtension */;
+			targetProxy = 5F8C35BB1EA7AB2D0085000E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -237,6 +527,14 @@
 				5F8C35821EA7A2D20085000E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5F8C35B71EA7AB2D0085000E /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F8C35B81EA7AB2D0085000E /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -283,7 +581,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -327,7 +625,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -337,24 +635,37 @@
 		};
 		5F8C35931EA7A2D20085000E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 307685921E36839CFA401882 /* Pods-CBLiteAppExtension.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = CBLiteAppExtension/CBLiteAppExtension.entitlements;
+				DEVELOPMENT_TEAM = T97TEF42TA;
 				INFOPLIST_FILE = CBLiteAppExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.CBLiteAppExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.CBLiteTaskApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CBLiteAppExtension-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		5F8C35941EA7A2D20085000E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8686F639867F5285E280BC8F /* Pods-CBLiteAppExtension.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = CBLiteAppExtension/CBLiteAppExtension.entitlements;
+				DEVELOPMENT_TEAM = T97TEF42TA;
 				INFOPLIST_FILE = CBLiteAppExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.CBLiteAppExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.CBLiteTaskApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CBLiteAppExtension-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -387,6 +698,38 @@
 			};
 			name = Release;
 		};
+		5F8C35BF1EA7AB2D0085000E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACAFCAFF0904E3AFE53BC92A /* Pods-CBLiteAppExtension-CBLiteTaskExtension.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CBLiteTaskExtension/CBLiteTaskExtension.entitlements;
+				DEVELOPMENT_TEAM = T97TEF42TA;
+				INFOPLIST_FILE = CBLiteTaskExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.CBLiteTaskApp.Extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "CBLiteAppExtension-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		5F8C35C01EA7AB2D0085000E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D878BC3EE8C5A0DCB9736B17 /* Pods-CBLiteAppExtension-CBLiteTaskExtension.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CBLiteTaskExtension/CBLiteTaskExtension.entitlements;
+				DEVELOPMENT_TEAM = T97TEF42TA;
+				INFOPLIST_FILE = CBLiteTaskExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.CBLiteTaskApp.Extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "CBLiteAppExtension-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -406,6 +749,7 @@
 				5F8C35941EA7A2D20085000E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F8C35951EA7A2D20085000E /* Build configuration list for PBXNativeTarget "CBLiteAppExtensionTests" */ = {
 			isa = XCConfigurationList;
@@ -414,6 +758,16 @@
 				5F8C35971EA7A2D20085000E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F8C35BE1EA7AB2D0085000E /* Build configuration list for PBXNativeTarget "CBLiteTaskExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F8C35BF1EA7AB2D0085000E /* Debug */,
+				5F8C35C01EA7AB2D0085000E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
