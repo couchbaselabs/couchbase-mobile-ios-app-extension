@@ -92,14 +92,12 @@ class TopTaskTableViewController: UITableViewController, NCWidgetProviding {
     private func initialize() {
         self.taskPresenter.attachPresentingView(self)
         self.taskPresenter.databaseManager.startObservingDatabaseChanges(self)
-        self.taskPresenter.databaseManager.startReplication(true)
         
     }
     
     private func deinitialize() {
         self.taskPresenter.detachPresentingView(self)
         self.taskPresenter.databaseManager.endObservingDatabaseChanges(self)
-        self.taskPresenter.databaseManager.stopReplication()
         
     }
 

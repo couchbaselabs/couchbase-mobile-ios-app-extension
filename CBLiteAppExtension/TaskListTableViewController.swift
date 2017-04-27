@@ -46,7 +46,6 @@ class TaskListTableViewController:UITableViewController {
         self.addAppActivatedNotification() // to be notified when app is activated
         self.taskPresenter.attachPresentingView(self)
         self.taskPresenter.databaseManager.startObservingDatabaseChanges(self)
-        self.taskPresenter.databaseManager.startReplication(true)
 
     }
     
@@ -54,7 +53,6 @@ class TaskListTableViewController:UITableViewController {
         self.removeAppActivatedNotification()
         self.taskPresenter.detachPresentingView(self)
         self.taskPresenter.databaseManager.endObservingDatabaseChanges(self)
-        self.taskPresenter.databaseManager.stopReplication()
   
     }
 

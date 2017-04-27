@@ -70,8 +70,7 @@ class DatabaseManager {
             
         }
         self.removeDatabaseObserver()
-        self.removeReplicationChangeObserver()
-    }
+     }
     
     // Sets up observer for notifying presenting view of changes
     func startObservingDatabaseChanges(_ listener:DatabaseManagerProtocol) {
@@ -81,16 +80,6 @@ class DatabaseManager {
     // Removes databse changes observer
     func endObservingDatabaseChanges(_ listener:DatabaseManagerProtocol) {
         self._dbListeners.removeValue(forKey: NSValue.init(nonretainedObject:listener))
-    }
-    
-    // Sets database sync/replication
-    func startReplication(_ continuous:Bool) {
-         self.startDatabaseReplication()
-    }
-    
-    // Stops database sync/replication
-    func stopReplication() {
-        
     }
     
 }
@@ -178,7 +167,7 @@ extension DatabaseManager {
         NotificationCenter.default.addObserver(forName: NSNotification.Name.cblDatabaseChange, object: nil, queue: nil) {
             [weak self] (notification) in
             print(#function)
-            for (k,v) in (self?._dbListeners)! {
+            for (_,v) in (self?._dbListeners)! {
                 v.onDatabaseUpdated()
             }
         }
@@ -191,72 +180,6 @@ extension DatabaseManager {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.cblDatabaseChange, object: nil)
     }
     
-    // Start Replication/ Synching with remote Sync Gateway
-    fileprivate func startDatabaseReplication() {
-        
-        // 1. Create a Pull replication to start pulling from remote source
-        self.startPullReplication()
-        
-        // 2. Create a Push replication to start pushing to  remote source
-        self.startPushReplication()
-        
-        // 3: Start Observing push/pull changes to/from remote database
-        self.addReplicationChangeObserver()
-        
-    }
-    
-    fileprivate func startPullReplication() {
-        
-        // 1: Create a Pull replication to start pulling from remote source
-        _pullRepl = _db?.createPullReplication(URL(string: self.kDBName.lowercased(), relativeTo: URL.init(string: kRemoteSyncUrl))!)
-        
-        // Continuously look for changes
-        _pullRepl?.continuous = true
-        
-        // Optionally, Set channels from which to pull
-        // pullRepl?.channels = [...]
-        
-        // 4. Start the pull replicator
-        _pullRepl?.start()
-        
-    }
-    
-    fileprivate func startPushReplication() {
-        
-        // 1: Create a push replication to start pushing to remote source
-        _pushRepl = _db?.createPushReplication(URL(string: self.kDBName.lowercased(), relativeTo: URL.init(string:kRemoteSyncUrl))!)
-        
-        // Continuously push  changes
-        _pushRepl?.continuous = true
-        
-        
-        // 3. Start the push replicator
-        _pushRepl?.start()
-        
-    }
-    
-    
-    fileprivate func addReplicationChangeObserver() {
-        
-        // 1. iOS Specific. Add observer to the NOtification Center to observe replicator changes
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.cblReplicationChange, object: nil, queue: nil) {
-            [weak self] (notification) in
-            
-            // Handle changes to the replicator status - Such as displaying progress
-            // indicator when status is .running
-            // The replications
-            self?._pullRepl?.suspended = false
-            self?._pushRepl?.suspended = false
-            
-        }
-        
-    }
-    
-    fileprivate func removeReplicationChangeObserver() {
-        // 1. iOS Specific. Remove observer from Replication state changes
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.cblReplicationChange, object: nil)
-        
-    }
     
     
 }
