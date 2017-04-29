@@ -40,3 +40,4 @@ xcuserdata
 DerivedData
 *.xcuserstate
 carthage/
+*.xcuserdata

@@ -88,13 +88,13 @@ extension DatabaseManager {
     
     fileprivate func configureCBManagerForSharedData() -> Bool {
         do {
+            // 1. Set the file protection mode for the Couchbase Lite database folder
             let options = CBLManagerOptions(readOnly: false, fileProtection: Data.WritingOptions.completeFileProtectionUnlessOpen)
-            let directory: URL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.example.CBLiteSharedData")!
-            let cbLitePath = directory.appendingPathComponent("cblite")
             let cblpoptions = UnsafeMutablePointer<CBLManagerOptions>.allocate(capacity: 1)
             cblpoptions.initialize(to: options)
             
             if let url = self.appGroupContainerURL() {
+                // 2. Initialize the CBLManager with the directory of the shared container
                 _cbManager = try CBLManager.init(directory: url.relativePath, options: cblpoptions)
             }
             
@@ -135,7 +135,7 @@ extension DatabaseManager {
 // MARK: Internal
 extension DatabaseManager {
     fileprivate  func appGroupContainerURL() -> URL? {
-        // 1
+        // 1. Get URL to shared group container
         let fileManager = FileManager.default
         guard let groupURL = fileManager
             .containerURL(forSecurityApplicationGroupIdentifier: "group.com.example.CBLiteSharedData") else {
@@ -145,7 +145,7 @@ extension DatabaseManager {
         let storagePathUrl = groupURL.appendingPathComponent("CBLite")
         let storagePath = storagePathUrl.path
         
-        // 2: Create a folder in the shared container location
+        // 2: Create a folder in the shared container location with name"CBLite"
         if !fileManager.fileExists(atPath: storagePath) {
             do {
                 try fileManager.createDirectory(atPath: storagePath,

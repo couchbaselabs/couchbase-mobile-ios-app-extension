@@ -310,7 +310,6 @@
 				TargetAttributes = {
 					5F8C35741EA7A2D20085000E = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = T97TEF42TA;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -326,7 +325,6 @@
 					};
 					5F8C35AF1EA7AB2D0085000E = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = T97TEF42TA;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -641,7 +639,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = CBLiteAppExtension/CBLiteAppExtension.entitlements;
-				DEVELOPMENT_TEAM = T97TEF42TA;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CBLiteAppExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.CBLiteTaskApp;
@@ -660,7 +658,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = CBLiteAppExtension/CBLiteAppExtension.entitlements;
-				DEVELOPMENT_TEAM = T97TEF42TA;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CBLiteAppExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.CBLiteTaskApp;
@@ -703,7 +701,7 @@
 			baseConfigurationReference = ACAFCAFF0904E3AFE53BC92A /* Pods-CBLiteAppExtension-CBLiteTaskExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = CBLiteTaskExtension/CBLiteTaskExtension.entitlements;
-				DEVELOPMENT_TEAM = T97TEF42TA;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CBLiteTaskExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.CBLiteTaskApp.Extension;
@@ -719,7 +717,7 @@
 			baseConfigurationReference = D878BC3EE8C5A0DCB9736B17 /* Pods-CBLiteAppExtension-CBLiteTaskExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = CBLiteTaskExtension/CBLiteTaskExtension.entitlements;
-				DEVELOPMENT_TEAM = T97TEF42TA;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CBLiteTaskExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.CBLiteTaskApp.Extension;
