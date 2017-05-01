@@ -27,16 +27,10 @@ class DatabaseManager {
     // fileprivate
     fileprivate let kDBName:String = "demo"
     
-    // This is the remote URL of the Sync Gateway (public Port)
-    fileprivate let kRemoteSyncUrl = "http://localhost:4984"
     
     fileprivate var _cbManager:CBLManager?
     
     fileprivate var _db:CBLDatabase?
-    
-    fileprivate var _pullRepl:CBLReplication?
-    
-    fileprivate var _pushRepl:CBLReplication?
     
     fileprivate var _dbListeners:[NSValue:DatabaseManagerProtocol] = [:]
     
