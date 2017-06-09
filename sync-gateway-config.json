@@ -1,0 +1,18 @@
+{
+  "log": ["*"],
+  "CORS": {
+     "Origin":["*"]
+        },
+  "databases": {
+    "demo": {
+      "server": "walrus:",
+      "bucket": "default",
+      "users": { "GUEST": { "disabled": false, "admin_channels": ["*"] } },
+      "unsupported": {
+        "user_views": {
+          "enabled":true
+        }
+      }
+    }
+  }
+}
