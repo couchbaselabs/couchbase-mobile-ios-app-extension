@@ -14,6 +14,7 @@ class TopTaskTableViewController: UITableViewController, NCWidgetProviding {
     @IBOutlet weak var taskLabel: UILabel!
     fileprivate var taskPresenter:TaskPresenter = TaskPresenter()
     fileprivate let topNTasks:UInt = 2
+    var initialized:Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.rowHeight = 44.0
@@ -24,6 +25,7 @@ class TopTaskTableViewController: UITableViewController, NCWidgetProviding {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print(#function)
+        self.initializeTaskPresenter()
         self.taskPresenter.getAllDocumentsInDatabase(handler: { [unowned self](error) in
             switch error {
             case nil:
@@ -44,7 +46,7 @@ class TopTaskTableViewController: UITableViewController, NCWidgetProviding {
     override func viewDidDisappear(_ animated: Bool) {
         print(#function)
         super.viewDidDisappear(animated)
-        self.deinitialize()
+        self.deinitializeTaskPresenter()
 
     }
     
@@ -57,7 +59,7 @@ class TopTaskTableViewController: UITableViewController, NCWidgetProviding {
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         print(#function)
          
-        self.initialize()
+        self.initializeTaskPresenter()
         self.taskPresenter.getAllDocumentsInDatabase(handler: { [unowned self] (error) in
             switch error {
             case nil:
@@ -77,11 +79,7 @@ class TopTaskTableViewController: UITableViewController, NCWidgetProviding {
  
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        coordinator.animate(alongsideTransition: { context in
-            self.tableView.frame = CGRect(x:0, y:0, width:size.width, height:size.height)
-        }, completion: nil)
-    }
+   
     private func updatePreferredContentSize() {
         preferredContentSize = CGSize(width: CGFloat(0), height: CGFloat(tableView(tableView, numberOfRowsInSection: 0)) * CGFloat(tableView.rowHeight) + tableView.sectionFooterHeight)
         
@@ -89,18 +87,26 @@ class TopTaskTableViewController: UITableViewController, NCWidgetProviding {
     }
     
     
-    private func initialize() {
+    private func initializeTaskPresenter() {
+        if initialized == true
+        {
+            return
+        }
         self.taskPresenter.attachPresentingView(self)
         self.taskPresenter.databaseManager.startObservingDatabaseChanges(self)
-        self.taskPresenter.databaseManager.startReplication(true)
-        
-    }
+        self.taskPresenter.databaseManager.startPushAndPullReplication()
+        initialized = true
+     }
     
-    private func deinitialize() {
+    private func deinitializeTaskPresenter() {
+        if initialized == false
+        {
+            return
+        }
         self.taskPresenter.detachPresentingView(self)
         self.taskPresenter.databaseManager.endObservingDatabaseChanges(self)
-        self.taskPresenter.databaseManager.stopReplication()
-        
+        self.taskPresenter.databaseManager.stopAllReplications()
+        initialized = false
     }
 
 }
@@ -137,7 +143,7 @@ extension TopTaskTableViewController:DatabaseManagerProtocol {
 // MARK: PresentingViewProtocol
 extension TopTaskTableViewController:PresentingViewProtocol {
     // override default impl
-    func showErrorAlertWithTitle(_ title:String?, message:String) {
+    func showAlertWithTitle(_ title:String?, message:String) {
         print(#function)
         //noop
     }

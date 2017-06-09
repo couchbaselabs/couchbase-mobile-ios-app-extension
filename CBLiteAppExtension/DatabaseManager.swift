@@ -73,6 +73,11 @@ class DatabaseManager {
         self.removeReplicationChangeObserver()
     }
     
+    
+}
+
+// MARK: Public
+extension DatabaseManager {
     // Sets up observer for notifying presenting view of changes
     func startObservingDatabaseChanges(_ listener:DatabaseManagerProtocol) {
         self._dbListeners[NSValue.init(nonretainedObject:listener)] = listener
@@ -83,14 +88,50 @@ class DatabaseManager {
         self._dbListeners.removeValue(forKey: NSValue.init(nonretainedObject:listener))
     }
     
-    // Sets database sync/replication
-    func startReplication(_ continuous:Bool) {
-         self.startDatabaseReplication()
+    func startPushAndPullReplication() {
+        self.startPushReplication()
+        self.startPullReplication()
     }
     
-    // Stops database sync/replication
-    func stopReplication() {
+    // Sets database sync/replication
+    func startPushReplication() {
+        // 1. Create a Pull replication to start pushing to remote source
+        self.startDBPushReplication()
         
+        // 2. Add Observer for push replicator changes
+        if let _pushRepl = _pushRepl {
+            self.addReplicationChangeObserverForReplicator(_pushRepl)
+        }
+        
+    }
+    
+    // Sets database sync/replication
+    func startPullReplication() {
+        // 1. Create a Pull replication to start pulling from remote source
+        self.startDBPullReplication()
+        
+        // 2. Add Observer for pull replicator changes
+        if let _pullRepl = _pullRepl {
+            self.addReplicationChangeObserverForReplicator(_pullRepl)
+        }
+
+    }
+
+    
+    // Stops database sync/replication
+    func stopAllReplications() {
+        stopPullReplication()
+        stopPushReplication()
+    }
+
+    // stop Push Replication
+    func stopPushReplication() {
+         _pushRepl?.stop()
+    }
+    
+    // stop Pull Replication
+    func stopPullReplication() {
+         _pullRepl?.stop()
     }
     
 }
@@ -99,20 +140,21 @@ extension DatabaseManager {
     
     fileprivate func configureCBManagerForSharedData() -> Bool {
         do {
+            // 1. Set the file protection mode for the Couchbase Lite database folder
             let options = CBLManagerOptions(readOnly: false, fileProtection: Data.WritingOptions.completeFileProtectionUnlessOpen)
-            let directory: URL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.example.CBLiteSharedData")!
-            let cbLitePath = directory.appendingPathComponent("cblite")
             let cblpoptions = UnsafeMutablePointer<CBLManagerOptions>.allocate(capacity: 1)
             cblpoptions.initialize(to: options)
             
             if let url = self.appGroupContainerURL() {
+                // 2. Initialize the CBLManager with the directory of the shared container
                 _cbManager = try CBLManager.init(directory: url.relativePath, options: cblpoptions)
+                self.enableCrazyLevelLogging()
             }
             
             return true
         }
         catch {
-             return false
+            return false
             
         }
     }
@@ -139,6 +181,15 @@ extension DatabaseManager {
         }
     }
     
+    private func enableCrazyLevelLogging() {
+        CBLManager.enableLogging("Reachability")
+        CBLManager.enableLogging("SyncVerbose")
+        CBLManager.enableLogging("CBLDatabase")
+        CBLManager.enableLogging("ChangeTrackerVerbose")
+        CBLManager.enableLogging("RemoteRequest")
+
+    }
+    
 }
 
 
@@ -146,7 +197,7 @@ extension DatabaseManager {
 // MARK: Internal
 extension DatabaseManager {
     fileprivate  func appGroupContainerURL() -> URL? {
-        // 1
+        // 1. Get URL to shared group container
         let fileManager = FileManager.default
         guard let groupURL = fileManager
             .containerURL(forSecurityApplicationGroupIdentifier: "group.com.example.CBLiteSharedData") else {
@@ -156,7 +207,7 @@ extension DatabaseManager {
         let storagePathUrl = groupURL.appendingPathComponent("CBLite")
         let storagePath = storagePathUrl.path
         
-        // 2: Create a folder in the shared container location
+        // 2: Create a folder in the shared container location with name"CBLite"
         if !fileManager.fileExists(atPath: storagePath) {
             do {
                 try fileManager.createDirectory(atPath: storagePath,
@@ -178,7 +229,7 @@ extension DatabaseManager {
         NotificationCenter.default.addObserver(forName: NSNotification.Name.cblDatabaseChange, object: nil, queue: nil) {
             [weak self] (notification) in
             print(#function)
-            for (k,v) in (self?._dbListeners)! {
+            for (_,v) in (self?._dbListeners)! {
                 v.onDatabaseUpdated()
             }
         }
@@ -191,62 +242,57 @@ extension DatabaseManager {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.cblDatabaseChange, object: nil)
     }
     
-    // Start Replication/ Synching with remote Sync Gateway
-    fileprivate func startDatabaseReplication() {
-        
-        // 1. Create a Pull replication to start pulling from remote source
-        self.startPullReplication()
-        
-        // 2. Create a Push replication to start pushing to  remote source
-        self.startPushReplication()
-        
-        // 3: Start Observing push/pull changes to/from remote database
-        self.addReplicationChangeObserver()
-        
-    }
+   
     
-    fileprivate func startPullReplication() {
+    fileprivate func startDBPullReplication() {
         
-        // 1: Create a Pull replication to start pulling from remote source
-        _pullRepl = _db?.createPullReplication(URL(string: self.kDBName.lowercased(), relativeTo: URL.init(string: kRemoteSyncUrl))!)
-        
-        // Continuously look for changes
-        _pullRepl?.continuous = true
-        
-        // Optionally, Set channels from which to pull
-        // pullRepl?.channels = [...]
+        if (_pullRepl == nil) {
+            // 1: Create a Pull replication to start pulling from remote source
+            _pullRepl = _db?.createPullReplication(URL(string: self.kDBName.lowercased(), relativeTo: URL.init(string: kRemoteSyncUrl))!)
+            
+            // 2. Continuously look for changes
+            _pullRepl?.continuous = true
+            
+            // Optionally, Set channels from which to pull
+            // pullRepl?.channels = [...]
+            
+         }
         
         // 4. Start the pull replicator
         _pullRepl?.start()
         
     }
     
-    fileprivate func startPushReplication() {
+    fileprivate func startDBPushReplication() {
         
-        // 1: Create a push replication to start pushing to remote source
-        _pushRepl = _db?.createPushReplication(URL(string: self.kDBName.lowercased(), relativeTo: URL.init(string:kRemoteSyncUrl))!)
+        if (_pushRepl == nil) {
         
-        // Continuously push  changes
-        _pushRepl?.continuous = true
-        
+            // 1: Create a push replication to start pushing to remote source
+            _pushRepl = _db?.createPushReplication(URL(string: self.kDBName.lowercased(), relativeTo: URL.init(string:kRemoteSyncUrl))!)
+            
+            // 2. Continuously push  changes
+            _pushRepl?.continuous = true
+            
+         }
         
         // 3. Start the push replicator
         _pushRepl?.start()
         
     }
     
-    
-    fileprivate func addReplicationChangeObserver() {
+    fileprivate func addReplicationChangeObserverForReplicator(_ replicator:CBLReplication) {
         
         // 1. iOS Specific. Add observer to the NOtification Center to observe replicator changes
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.cblReplicationChange, object: nil, queue: nil) {
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.cblReplicationChange, object: replicator, queue: nil) {
             [weak self] (notification) in
-            
-            // Handle changes to the replicator status - Such as displaying progress
-            // indicator when status is .running
-            // The replications
-            self?._pullRepl?.suspended = false
-            self?._pushRepl?.suspended = false
+            if replicator == self?._pushRepl && self?._pushRepl?.suspended == true {
+                // In case of iOS App Extension, the replication suspends itself
+             //  self?._pushRepl?.suspended = false
+            }
+            if replicator == self?._pullRepl && self?._pullRepl?.suspended == true {
+                 // In case of iOS App Extension, the replication suspends itself 
+              //  self?._pullRepl?.suspended = false
+            }
             
         }
         

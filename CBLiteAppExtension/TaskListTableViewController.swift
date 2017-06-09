@@ -24,15 +24,16 @@ class TaskListTableViewController:UITableViewController {
     }
     override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.initialize()
+        self.initializeTaskPresenter()
         handleFetchDocumentsRequest()
        
     }
     
 
     override public func viewDidDisappear(_ animated: Bool) {
+        print(#function)
         super.viewDidDisappear(animated)
-        self.deinitialize()
+        self.deinitializeTaskPresenter()
     }
     
 
@@ -42,19 +43,17 @@ class TaskListTableViewController:UITableViewController {
     }
     
     
-    private func initialize() {
-        self.addAppActivatedNotification() // to be notified when app is activated
+    private func initializeTaskPresenter() {
         self.taskPresenter.attachPresentingView(self)
         self.taskPresenter.databaseManager.startObservingDatabaseChanges(self)
-        self.taskPresenter.databaseManager.startReplication(true)
+        self.taskPresenter.databaseManager.startPushAndPullReplication()
 
     }
     
-    private func deinitialize() {
-        self.removeAppActivatedNotification()
+    private func deinitializeTaskPresenter() {
         self.taskPresenter.detachPresentingView(self)
         self.taskPresenter.databaseManager.endObservingDatabaseChanges(self)
-        self.taskPresenter.databaseManager.stopReplication()
+        self.taskPresenter.databaseManager.stopAllReplications()
   
     }
 
@@ -246,26 +245,6 @@ extension TaskListTableViewController {
             
         })
         self.present(alertController, animated: true, completion: nil)
-        
-    }
-}
-
-// MARK : App Life cycle notifications
-extension TaskListTableViewController {
-    fileprivate func addAppActivatedNotification() {
-        
-        // 1. iOS Specific. Add observer to the NOtification Center to observe app notification changes when it comes to foreground
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidBecomeActive, object: nil, queue: nil) {
-            [weak self] (notification) in
-            self?.handleFetchDocumentsRequest()
-           
-        }
-        
-    }
-
-    fileprivate func removeAppActivatedNotification() {
-        // 1. iOS Specific. Remove observer from db state changes
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
         
     }
 }
