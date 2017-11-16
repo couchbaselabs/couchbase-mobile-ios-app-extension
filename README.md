@@ -2,8 +2,8 @@
 Simple App that demonstrates how Couchbase Lite can be used as an embedded database with an iOS App Extension. Details will be provided in a blog post coming soon.
 
 ## Platform
-Xcode 8.3 +
-Couchbase Lite 1.4.1
+- Xcode 8.3 +
+- Couchbase Lite 1.4.1
 
 ## Installation
 - Clone the repo
