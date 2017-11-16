@@ -41,3 +41,6 @@ DerivedData
 *.xcuserstate
 carthage/
 *.xcuserdata
+
+# Cocoapods
+Pods/

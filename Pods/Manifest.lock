@@ -1,16 +1,16 @@
 PODS:
-  - couchbase-lite-ios (1.4.0):
-    - couchbase-lite-ios/SQLite (= 1.4.0)
-  - couchbase-lite-ios/SQLCipher (1.4.0)
-  - couchbase-lite-ios/SQLite (1.4.0)
+  - couchbase-lite-ios (1.4.1):
+    - couchbase-lite-ios/SQLite (= 1.4.1)
+  - couchbase-lite-ios/SQLCipher (1.4.1)
+  - couchbase-lite-ios/SQLite (1.4.1)
 
 DEPENDENCIES:
-  - couchbase-lite-ios (~> 1.4.0)
-  - couchbase-lite-ios/SQLCipher (= 1.4.0)
+  - couchbase-lite-ios (= 1.4.1)
+  - couchbase-lite-ios/SQLCipher (= 1.4.1)
 
 SPEC CHECKSUMS:
-  couchbase-lite-ios: 5b9f59ce74c2d981c41795f0949d31354d90c459
+  couchbase-lite-ios: 7c875538a0fc55a7e9744edb4e89c23737686230
 
-PODFILE CHECKSUM: fa8100fceab51d7155212b8521df0422747cbc19
+PODFILE CHECKSUM: 0a20ff8e1514ea381049136f2fa9b8be4cc4e23d
 
 COCOAPODS: 1.2.0
