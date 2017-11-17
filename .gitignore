@@ -40,3 +40,5 @@ xcuserdata
 DerivedData
 *.xcuserstate
 carthage/
+
+Pods/

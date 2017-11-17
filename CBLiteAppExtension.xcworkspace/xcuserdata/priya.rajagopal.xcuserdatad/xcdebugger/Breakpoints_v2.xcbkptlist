@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CBLiteAppExtension/TaskListTableViewController.swift"
-            timestampString = "515522298.790909"
+            timestampString = "532580819.77057"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "230"
@@ -134,31 +134,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "CBLiteAppExtension.TaskListTableViewController.(handleAddDocumentRequest () -&gt; ()).(closure #2)"
+                  symbolName = "closure #2 (__ObjC.UIAlertAction) -&gt; () in CBLiteAppExtension.TaskListTableViewController.handleAddDocumentRequest() -&gt; ()"
                   moduleName = "CBLiteAppExtension"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/priya.rajagopal/projects/ios/CBLiteAppExtension/CBLiteAppExtension/TaskListTableViewController.swift"
-                  timestampString = "515009568.687907"
+                  urlString = "file:///Users/priya.rajagopal/projects/ios/app_extension/couchbase-mobile-ios-app-extension/CBLiteAppExtension/TaskListTableViewController.swift"
+                  timestampString = "532580730.080934"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "231"
-                  endingLineNumber = "231"
-                  offsetFromSymbolStart = "1214">
+                  startingLineNumber = "230"
+                  endingLineNumber = "230"
+                  offsetFromSymbolStart = "1463">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "CBLiteAppExtension.TaskListTableViewController.(handleAddDocumentRequest () -&gt; ()).(closure #2).(closure #1)"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #2 (__ObjC.UIAlertAction) -&gt; () in CBLiteAppExtension.TaskListTableViewController.handleAddDocumentRequest() -&gt; ()"
                   moduleName = "CBLiteAppExtension"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/priya.rajagopal/projects/ios/CBLiteAppExtension/CBLiteAppExtension/TaskListTableViewController.swift"
-                  timestampString = "515009568.689641"
+                  urlString = "file:///Users/priya.rajagopal/projects/ios/app_extension/couchbase-mobile-ios-app-extension/CBLiteAppExtension/TaskListTableViewController.swift"
+                  timestampString = "532580730.08303"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "232"
-                  endingLineNumber = "232"
-                  offsetFromSymbolStart = "20">
+                  startingLineNumber = "231"
+                  endingLineNumber = "231"
+                  offsetFromSymbolStart = "28">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -250,7 +250,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CBLiteAppExtension/TaskListTableViewController.swift"
-            timestampString = "514677054.728301"
+            timestampString = "532580819.771018"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
@@ -362,13 +362,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CBLiteAppExtension/TaskListTableViewController.swift"
-            timestampString = "515522298.790909"
+            timestampString = "532580819.771361"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
             endingLineNumber = "91"
             landmarkName = "TaskListTableViewController"
-            landmarkType = "4">
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
