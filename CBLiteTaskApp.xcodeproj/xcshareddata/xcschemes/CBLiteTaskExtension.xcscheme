@@ -18,7 +18,7 @@
                BlueprintIdentifier = "5F8C35AF1EA7AB2D0085000E"
                BuildableName = "CBLiteTaskExtension.appex"
                BlueprintName = "CBLiteTaskExtension"
-               ReferencedContainer = "container:CBLiteAppExtension.xcodeproj">
+               ReferencedContainer = "container:CBLiteTaskApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -30,9 +30,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5F8C35741EA7A2D20085000E"
-               BuildableName = "CBLiteAppExtension.app"
-               BlueprintName = "CBLiteAppExtension"
-               ReferencedContainer = "container:CBLiteAppExtension.xcodeproj">
+               BuildableName = "CBLiteTaskApp.app"
+               BlueprintName = "CBLiteTaskApp"
+               ReferencedContainer = "container:CBLiteTaskApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -41,6 +41,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -50,7 +51,7 @@
             BlueprintIdentifier = "5F8C35AF1EA7AB2D0085000E"
             BuildableName = "CBLiteTaskExtension.appex"
             BlueprintName = "CBLiteTaskExtension"
-            ReferencedContainer = "container:CBLiteAppExtension.xcodeproj">
+            ReferencedContainer = "container:CBLiteTaskApp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -60,6 +61,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = ""
       selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -72,9 +74,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5F8C35741EA7A2D20085000E"
-            BuildableName = "CBLiteAppExtension.app"
-            BlueprintName = "CBLiteAppExtension"
-            ReferencedContainer = "container:CBLiteAppExtension.xcodeproj">
+            BuildableName = "CBLiteTaskApp.app"
+            BlueprintName = "CBLiteTaskApp"
+            ReferencedContainer = "container:CBLiteTaskApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -92,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5F8C35741EA7A2D20085000E"
-            BuildableName = "CBLiteAppExtension.app"
-            BlueprintName = "CBLiteAppExtension"
-            ReferencedContainer = "container:CBLiteAppExtension.xcodeproj">
+            BuildableName = "CBLiteTaskApp.app"
+            BlueprintName = "CBLiteTaskApp"
+            ReferencedContainer = "container:CBLiteTaskApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

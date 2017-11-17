@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45A457AF33C2B36519280B3F /* Pods_CBLiteTaskApp_CBLiteTaskExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDBF754EE768C724FEF5F3DA /* Pods_CBLiteTaskApp_CBLiteTaskExtension.framework */; };
 		5F7559B01EB2679E00F8C661 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9980651EB2457600805B1D /* DatabaseManager.swift */; };
 		5F8C35791EA7A2D20085000E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C35781EA7A2D20085000E /* AppDelegate.swift */; };
 		5F8C357B1EA7A2D20085000E /* TaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C357A1EA7A2D20085000E /* TaskListTableViewController.swift */; };
@@ -26,8 +27,7 @@
 		5F9980611EAB9CAF00805B1D /* TaskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9980601EAB9CAF00805B1D /* TaskPresenter.swift */; };
 		5F9980621EAB9CAF00805B1D /* TaskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9980601EAB9CAF00805B1D /* TaskPresenter.swift */; };
 		5F9980661EB2457600805B1D /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9980651EB2457600805B1D /* DatabaseManager.swift */; };
-		89BBCB35F2A45A460051ACF7 /* Pods_CBLiteAppExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDA7A45A7DBBCAB64FAFA38 /* Pods_CBLiteAppExtension.framework */; };
-		E301034E61AAB6581EB89243 /* Pods_CBLiteAppExtension_CBLiteTaskExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CE419A34D79E23AC7988A88 /* Pods_CBLiteAppExtension_CBLiteTaskExtension.framework */; };
+		85CB14F41F4556AE82C5AC35 /* Pods_CBLiteTaskApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D720FF1E8E2A3AC8843D9CF /* Pods_CBLiteTaskApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,14 +64,17 @@
 /* Begin PBXFileReference section */
 		0CE419A34D79E23AC7988A88 /* Pods_CBLiteAppExtension_CBLiteTaskExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CBLiteAppExtension_CBLiteTaskExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		307685921E36839CFA401882 /* Pods-CBLiteAppExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBLiteAppExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CBLiteAppExtension/Pods-CBLiteAppExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		5F8C35751EA7A2D20085000E /* CBLiteAppExtension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CBLiteAppExtension.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		41C56260C4B8EFA1EFF56302 /* Pods-CBLiteTaskApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBLiteTaskApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CBLiteTaskApp/Pods-CBLiteTaskApp.debug.xcconfig"; sourceTree = "<group>"; };
+		4599EEDA9E660A59EAF683C2 /* Pods-CBLiteTaskApp-CBLiteTaskExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBLiteTaskApp-CBLiteTaskExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-CBLiteTaskApp-CBLiteTaskExtension/Pods-CBLiteTaskApp-CBLiteTaskExtension.release.xcconfig"; sourceTree = "<group>"; };
+		5D720FF1E8E2A3AC8843D9CF /* Pods_CBLiteTaskApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CBLiteTaskApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F8C35751EA7A2D20085000E /* CBLiteTaskApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CBLiteTaskApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F8C35781EA7A2D20085000E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F8C357A1EA7A2D20085000E /* TaskListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewController.swift; sourceTree = "<group>"; };
 		5F8C357D1EA7A2D20085000E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F8C357F1EA7A2D20085000E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F8C35821EA7A2D20085000E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F8C35841EA7A2D20085000E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5F8C35891EA7A2D20085000E /* CBLiteAppExtensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CBLiteAppExtensionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F8C35891EA7A2D20085000E /* CBLiteTaskAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CBLiteTaskAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F8C358D1EA7A2D20085000E /* CBLiteAppExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBLiteAppExtensionTests.swift; sourceTree = "<group>"; };
 		5F8C358F1EA7A2D20085000E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F8C35AB1EA7A9670085000E /* CBLiteAppExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CBLiteAppExtension.entitlements; sourceTree = "<group>"; };
@@ -90,7 +93,10 @@
 		8686F639867F5285E280BC8F /* Pods-CBLiteAppExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBLiteAppExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-CBLiteAppExtension/Pods-CBLiteAppExtension.release.xcconfig"; sourceTree = "<group>"; };
 		9EDA7A45A7DBBCAB64FAFA38 /* Pods_CBLiteAppExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CBLiteAppExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACAFCAFF0904E3AFE53BC92A /* Pods-CBLiteAppExtension-CBLiteTaskExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBLiteAppExtension-CBLiteTaskExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CBLiteAppExtension-CBLiteTaskExtension/Pods-CBLiteAppExtension-CBLiteTaskExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		D7C33A516B1E18C93A4B4DF7 /* Pods-CBLiteTaskApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBLiteTaskApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CBLiteTaskApp/Pods-CBLiteTaskApp.release.xcconfig"; sourceTree = "<group>"; };
 		D878BC3EE8C5A0DCB9736B17 /* Pods-CBLiteAppExtension-CBLiteTaskExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBLiteAppExtension-CBLiteTaskExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-CBLiteAppExtension-CBLiteTaskExtension/Pods-CBLiteAppExtension-CBLiteTaskExtension.release.xcconfig"; sourceTree = "<group>"; };
+		DDBF754EE768C724FEF5F3DA /* Pods_CBLiteTaskApp_CBLiteTaskExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CBLiteTaskApp_CBLiteTaskExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9E11E04366288C52FEE1A38 /* Pods-CBLiteTaskApp-CBLiteTaskExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBLiteTaskApp-CBLiteTaskExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CBLiteTaskApp-CBLiteTaskExtension/Pods-CBLiteTaskApp-CBLiteTaskExtension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89BBCB35F2A45A460051ACF7 /* Pods_CBLiteAppExtension.framework in Frameworks */,
+				85CB14F41F4556AE82C5AC35 /* Pods_CBLiteTaskApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,7 +120,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F8C35B31EA7AB2D0085000E /* NotificationCenter.framework in Frameworks */,
-				E301034E61AAB6581EB89243 /* Pods_CBLiteAppExtension_CBLiteTaskExtension.framework in Frameworks */,
+				45A457AF33C2B36519280B3F /* Pods_CBLiteTaskApp_CBLiteTaskExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +134,10 @@
 				8686F639867F5285E280BC8F /* Pods-CBLiteAppExtension.release.xcconfig */,
 				ACAFCAFF0904E3AFE53BC92A /* Pods-CBLiteAppExtension-CBLiteTaskExtension.debug.xcconfig */,
 				D878BC3EE8C5A0DCB9736B17 /* Pods-CBLiteAppExtension-CBLiteTaskExtension.release.xcconfig */,
+				41C56260C4B8EFA1EFF56302 /* Pods-CBLiteTaskApp.debug.xcconfig */,
+				D7C33A516B1E18C93A4B4DF7 /* Pods-CBLiteTaskApp.release.xcconfig */,
+				E9E11E04366288C52FEE1A38 /* Pods-CBLiteTaskApp-CBLiteTaskExtension.debug.xcconfig */,
+				4599EEDA9E660A59EAF683C2 /* Pods-CBLiteTaskApp-CBLiteTaskExtension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -148,8 +158,8 @@
 		5F8C35761EA7A2D20085000E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5F8C35751EA7A2D20085000E /* CBLiteAppExtension.app */,
-				5F8C35891EA7A2D20085000E /* CBLiteAppExtensionTests.xctest */,
+				5F8C35751EA7A2D20085000E /* CBLiteTaskApp.app */,
+				5F8C35891EA7A2D20085000E /* CBLiteTaskAppTests.xctest */,
 				5F8C35B01EA7AB2D0085000E /* CBLiteTaskExtension.appex */,
 			);
 			name = Products;
@@ -181,6 +191,8 @@
 				5F8C35B21EA7AB2D0085000E /* NotificationCenter.framework */,
 				9EDA7A45A7DBBCAB64FAFA38 /* Pods_CBLiteAppExtension.framework */,
 				0CE419A34D79E23AC7988A88 /* Pods_CBLiteAppExtension_CBLiteTaskExtension.framework */,
+				5D720FF1E8E2A3AC8843D9CF /* Pods_CBLiteTaskApp.framework */,
+				DDBF754EE768C724FEF5F3DA /* Pods_CBLiteTaskApp_CBLiteTaskExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -239,9 +251,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5F8C35741EA7A2D20085000E /* CBLiteAppExtension */ = {
+		5F8C35741EA7A2D20085000E /* CBLiteTaskApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5F8C35921EA7A2D20085000E /* Build configuration list for PBXNativeTarget "CBLiteAppExtension" */;
+			buildConfigurationList = 5F8C35921EA7A2D20085000E /* Build configuration list for PBXNativeTarget "CBLiteTaskApp" */;
 			buildPhases = (
 				0A074126BAB0CC728B09FEBC /* [CP] Check Pods Manifest.lock */,
 				5F8C35711EA7A2D20085000E /* Sources */,
@@ -256,14 +268,14 @@
 			dependencies = (
 				5F8C35BC1EA7AB2D0085000E /* PBXTargetDependency */,
 			);
-			name = CBLiteAppExtension;
+			name = CBLiteTaskApp;
 			productName = CBLiteAppExtension;
-			productReference = 5F8C35751EA7A2D20085000E /* CBLiteAppExtension.app */;
+			productReference = 5F8C35751EA7A2D20085000E /* CBLiteTaskApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5F8C35881EA7A2D20085000E /* CBLiteAppExtensionTests */ = {
+		5F8C35881EA7A2D20085000E /* CBLiteTaskAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5F8C35951EA7A2D20085000E /* Build configuration list for PBXNativeTarget "CBLiteAppExtensionTests" */;
+			buildConfigurationList = 5F8C35951EA7A2D20085000E /* Build configuration list for PBXNativeTarget "CBLiteTaskAppTests" */;
 			buildPhases = (
 				5F8C35851EA7A2D20085000E /* Sources */,
 				5F8C35861EA7A2D20085000E /* Frameworks */,
@@ -274,9 +286,9 @@
 			dependencies = (
 				5F8C358B1EA7A2D20085000E /* PBXTargetDependency */,
 			);
-			name = CBLiteAppExtensionTests;
+			name = CBLiteTaskAppTests;
 			productName = CBLiteAppExtensionTests;
-			productReference = 5F8C35891EA7A2D20085000E /* CBLiteAppExtensionTests.xctest */;
+			productReference = 5F8C35891EA7A2D20085000E /* CBLiteTaskAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		5F8C35AF1EA7AB2D0085000E /* CBLiteTaskExtension */ = {
@@ -336,7 +348,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5F8C35701EA7A2D20085000E /* Build configuration list for PBXProject "CBLiteAppExtension" */;
+			buildConfigurationList = 5F8C35701EA7A2D20085000E /* Build configuration list for PBXProject "CBLiteTaskApp" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -349,8 +361,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5F8C35741EA7A2D20085000E /* CBLiteAppExtension */,
-				5F8C35881EA7A2D20085000E /* CBLiteAppExtensionTests */,
+				5F8C35741EA7A2D20085000E /* CBLiteTaskApp */,
+				5F8C35881EA7A2D20085000E /* CBLiteTaskAppTests */,
 				5F8C35AF1EA7AB2D0085000E /* CBLiteTaskExtension */,
 			);
 		};
@@ -412,7 +424,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CBLiteAppExtension-CBLiteTaskExtension/Pods-CBLiteAppExtension-CBLiteTaskExtension-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CBLiteTaskApp-CBLiteTaskExtension/Pods-CBLiteTaskApp-CBLiteTaskExtension-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		52DE6D1E50EADB7ACDA15FFC /* [CP] Check Pods Manifest.lock */ = {
@@ -442,7 +454,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CBLiteAppExtension/Pods-CBLiteAppExtension-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CBLiteTaskApp/Pods-CBLiteTaskApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9DD8FC7BFF65B7217DE499BD /* [CP] Embed Pods Frameworks */ = {
@@ -457,7 +469,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CBLiteAppExtension/Pods-CBLiteAppExtension-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CBLiteTaskApp/Pods-CBLiteTaskApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -502,7 +514,7 @@
 /* Begin PBXTargetDependency section */
 		5F8C358B1EA7A2D20085000E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5F8C35741EA7A2D20085000E /* CBLiteAppExtension */;
+			target = 5F8C35741EA7A2D20085000E /* CBLiteTaskApp */;
 			targetProxy = 5F8C358A1EA7A2D20085000E /* PBXContainerItemProxy */;
 		};
 		5F8C35BC1EA7AB2D0085000E /* PBXTargetDependency */ = {
@@ -635,7 +647,7 @@
 		};
 		5F8C35931EA7A2D20085000E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 307685921E36839CFA401882 /* Pods-CBLiteAppExtension.debug.xcconfig */;
+			baseConfigurationReference = 41C56260C4B8EFA1EFF56302 /* Pods-CBLiteTaskApp.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -654,7 +666,7 @@
 		};
 		5F8C35941EA7A2D20085000E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8686F639867F5285E280BC8F /* Pods-CBLiteAppExtension.release.xcconfig */;
+			baseConfigurationReference = D7C33A516B1E18C93A4B4DF7 /* Pods-CBLiteTaskApp.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -680,7 +692,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.CBLiteAppExtensionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CBLiteAppExtension.app/CBLiteAppExtension";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CBLiteTaskApp.app/CBLiteTaskApp";
 			};
 			name = Debug;
 		};
@@ -694,13 +706,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.CBLiteAppExtensionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CBLiteAppExtension.app/CBLiteAppExtension";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CBLiteTaskApp.app/CBLiteTaskApp";
 			};
 			name = Release;
 		};
 		5F8C35BF1EA7AB2D0085000E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ACAFCAFF0904E3AFE53BC92A /* Pods-CBLiteAppExtension-CBLiteTaskExtension.debug.xcconfig */;
+			baseConfigurationReference = E9E11E04366288C52FEE1A38 /* Pods-CBLiteTaskApp-CBLiteTaskExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = CBLiteTaskExtension/CBLiteTaskExtension.entitlements;
 				DEVELOPMENT_TEAM = T97TEF42TA;
@@ -716,7 +728,7 @@
 		};
 		5F8C35C01EA7AB2D0085000E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D878BC3EE8C5A0DCB9736B17 /* Pods-CBLiteAppExtension-CBLiteTaskExtension.release.xcconfig */;
+			baseConfigurationReference = 4599EEDA9E660A59EAF683C2 /* Pods-CBLiteTaskApp-CBLiteTaskExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = CBLiteTaskExtension/CBLiteTaskExtension.entitlements;
 				DEVELOPMENT_TEAM = T97TEF42TA;
@@ -733,7 +745,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5F8C35701EA7A2D20085000E /* Build configuration list for PBXProject "CBLiteAppExtension" */ = {
+		5F8C35701EA7A2D20085000E /* Build configuration list for PBXProject "CBLiteTaskApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F8C35901EA7A2D20085000E /* Debug */,
@@ -742,7 +754,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5F8C35921EA7A2D20085000E /* Build configuration list for PBXNativeTarget "CBLiteAppExtension" */ = {
+		5F8C35921EA7A2D20085000E /* Build configuration list for PBXNativeTarget "CBLiteTaskApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F8C35931EA7A2D20085000E /* Debug */,
@@ -751,7 +763,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5F8C35951EA7A2D20085000E /* Build configuration list for PBXNativeTarget "CBLiteAppExtensionTests" */ = {
+		5F8C35951EA7A2D20085000E /* Build configuration list for PBXNativeTarget "CBLiteTaskAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F8C35961EA7A2D20085000E /* Debug */,
