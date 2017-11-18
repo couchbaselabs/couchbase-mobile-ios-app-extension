@@ -1,6 +1,8 @@
 # couchbase-mobile-ios-app-extension
 Simple App that demonstrates how Couchbase Lite can be used as an embedded database with an iOS App Extension. Details will be provided in a blog post coming soon.
 
+** If you would like to support sync across devices, switch to the "syncsupport" branch **
+
 ## Platform
 - Xcode 8.3 +
 - Couchbase Lite 1.4.1
