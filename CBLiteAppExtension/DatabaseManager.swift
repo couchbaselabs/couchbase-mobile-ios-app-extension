@@ -148,7 +148,7 @@ extension DatabaseManager {
             if let url = self.appGroupContainerURL() {
                 // 2. Initialize the CBLManager with the directory of the shared container
                 _cbManager = try CBLManager.init(directory: url.relativePath, options: cblpoptions)
-                self.enableCrazyLevelLogging()
+                //self.enableCrazyLevelLogging()
             }
             
             return true
@@ -258,7 +258,7 @@ extension DatabaseManager {
             
          }
         
-        // 4. Start the pull replicator
+        // 3. Start the pull replicator
         _pullRepl?.start()
         
     }
