@@ -40,8 +40,8 @@ extension PresentingViewProtocol where Self:UIViewController {
     
     func showErrorAlertWithTitle(_ title:String?, message:String) {
         
-        let alertController = UIAlertController(title: title ?? "", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        let okAction = UIAlertAction(title: NSLocalizedString("OK",comment:""), style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+        let alertController = UIAlertController(title: title ?? "", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: NSLocalizedString("OK",comment:""), style: .default) { (result : UIAlertAction) -> Void in
             
         }
         
@@ -51,8 +51,8 @@ extension PresentingViewProtocol where Self:UIViewController {
     
     func showSuccessAlertWithTitle(_ title:String?, message:String) {
         
-        let alertController = UIAlertController(title: title ?? "", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        let okAction = UIAlertAction(title: NSLocalizedString("OK",comment:""), style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+        let alertController = UIAlertController(title: title ?? "", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: NSLocalizedString("OK",comment:""), style: .default) { (result : UIAlertAction) -> Void in
             self.dismiss(animated: true, completion: {
                 
             })

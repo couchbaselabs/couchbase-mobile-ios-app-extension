@@ -93,13 +93,7 @@ extension TaskListTableViewController {
         if let queryRow = self.taskPresenter.docsEnumerator?.row(at: UInt(indexPath.row)) {
             if let userProps = queryRow.document?.userProperties ,let title = userProps[DocumentUserProperties.name.rawValue] as? String , let isDone = userProps[DocumentUserProperties.isCompleted.rawValue] as? Bool{
                 cell.textLabel?.text = title
-                if isDone == true {
-                    cell.accessoryType = UITableViewCellAccessoryType.checkmark
-                }
-                else {
-                    cell.accessoryType = UITableViewCellAccessoryType.none
-                }
-                
+                cell.accessoryType = isDone ? .checkmark : .none
                 cell.selectionStyle = .default
                 
             }
@@ -144,7 +138,7 @@ extension TaskListTableViewController {
                 docTitleTextField = textField
             })
             
-            let isCompleted = cell?.accessoryType == UITableViewCellAccessoryType.checkmark ? true:false
+            let isCompleted = cell?.accessoryType == .checkmark
             alertController.addAction(UIAlertAction(title: NSLocalizedString("Update", comment: ""), style: .default) { _ in
                 // update document at index
                 let row = indexPath.row
@@ -174,8 +168,8 @@ extension TaskListTableViewController {
     
     public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
-        cell?.accessoryType = cell?.accessoryType == UITableViewCellAccessoryType.checkmark ? UITableViewCellAccessoryType.none:UITableViewCellAccessoryType.checkmark
-        let isCompleted = cell?.accessoryType == UITableViewCellAccessoryType.checkmark ? true:false
+        cell?.accessoryType = cell?.accessoryType == .checkmark ? .none : .checkmark
+        let isCompleted = cell?.accessoryType == .checkmark
         
         let row = indexPath.row
         let props = [DocumentUserProperties.name.rawValue:cell?.textLabel?.text ?? "",DocumentUserProperties.isCompleted.rawValue:isCompleted] as [String : Any]
@@ -210,7 +204,7 @@ extension TaskListTableViewController {
             }
         })
     }
-    func handleAddDocumentRequest() {
+    @objc func handleAddDocumentRequest() {
         var docNameTextField:UITextField!
         
         let alertController = UIAlertController(title: nil,
@@ -253,7 +247,7 @@ extension TaskListTableViewController {
     fileprivate func addAppActivatedNotification() {
         
         // 1. iOS Specific. Add observer to the NOtification Center to observe app notification changes when it comes to foreground
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidBecomeActive, object: nil, queue: nil) {
+        NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: nil) {
             [weak self] (notification) in
             self?.handleFetchDocumentsRequest()
            
@@ -263,7 +257,7 @@ extension TaskListTableViewController {
 
     fileprivate func removeAppActivatedNotification() {
         // 1. iOS Specific. Remove observer from db state changes
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
         
     }
 }

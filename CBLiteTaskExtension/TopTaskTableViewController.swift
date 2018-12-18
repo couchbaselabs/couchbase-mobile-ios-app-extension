@@ -161,13 +161,7 @@ extension TopTaskTableViewController {
         if let queryRow = self.taskPresenter.docsEnumerator?.row(at: UInt(indexPath.row)) {
              if let userProps = queryRow.document?.userProperties ,let title = userProps[DocumentUserProperties.name.rawValue] as? String , let isDone = userProps[DocumentUserProperties.isCompleted.rawValue] as? Bool{
                 cell.textLabel?.text = title
-                if isDone == true {
-                    cell.accessoryType = UITableViewCellAccessoryType.checkmark
-                }
-                else {
-                    cell.accessoryType = UITableViewCellAccessoryType.none
-                }
-                
+                cell.accessoryType = isDone ? .checkmark : .none
                 cell.selectionStyle = .default
                 
             }
@@ -178,14 +172,14 @@ extension TopTaskTableViewController {
     
     public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        guard let count = self.taskPresenter.docsEnumerator?.count else {
+        guard (self.taskPresenter.docsEnumerator?.count) != nil else {
             print("Something very odd!!")
             return
         }
         
         let cell = tableView.cellForRow(at: indexPath)
-        cell?.accessoryType = cell?.accessoryType == UITableViewCellAccessoryType.checkmark ? UITableViewCellAccessoryType.none:UITableViewCellAccessoryType.checkmark
-        let isCompleted = cell?.accessoryType == UITableViewCellAccessoryType.checkmark ? true:false
+        cell?.accessoryType = cell?.accessoryType == .checkmark ? .none : .checkmark
+        let isCompleted = cell?.accessoryType == .checkmark
         
         let row = indexPath.row
         let props = [DocumentUserProperties.name.rawValue:cell?.textLabel?.text ?? "",DocumentUserProperties.isCompleted.rawValue:isCompleted] as [String : Any]

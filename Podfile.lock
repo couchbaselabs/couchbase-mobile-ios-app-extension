@@ -8,9 +8,13 @@ DEPENDENCIES:
   - couchbase-lite-ios (= 1.4.1)
   - couchbase-lite-ios/SQLCipher (= 1.4.1)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - couchbase-lite-ios
+
 SPEC CHECKSUMS:
   couchbase-lite-ios: 7c875538a0fc55a7e9744edb4e89c23737686230
 
-PODFILE CHECKSUM: 0a20ff8e1514ea381049136f2fa9b8be4cc4e23d
+PODFILE CHECKSUM: 12db8f646d2d5100a7e1704875f0da552ab180cb
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.5.3
