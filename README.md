@@ -1,3 +1,5 @@
+⚠️ This repo is obsolete.  It was developed using a version of Couchbase Lite that reached end of life years ago.
+
 # couchbase-mobile-ios-app-extension
 Simple App that demonstrates how Couchbase Lite can be used as an embedded database with an iOS App Extension. Details will be provided in a blog post coming soon.
 
